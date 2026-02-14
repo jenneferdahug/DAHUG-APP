@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+use Illuminate\Support\Facades\Response;
 
 Route::get('/', function () {
     return "Hello, World!";
@@ -20,4 +21,10 @@ Route::get('/test-container', function (Request $request) {
 // Service provider
 Route::get('/test-provider', function (UserService $userService) {
     return $userService->listUsers();
+});
+
+Route::get('/test-users', [UserController::class, 'index']);
+
+Route::get('/test-facade', function (UserService $userService) {
+    return Response::json($userService->listUsers());
 });

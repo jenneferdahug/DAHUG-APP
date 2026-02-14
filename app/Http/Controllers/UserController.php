@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\UserService;
 use Illuminate\Http\Request;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
-    public function show()
+    public function show() 
     {
         $users = [
             [
-                'name' => 'John Doe',
+                'name' => 'John Doe', 
                 'gender' => 'Male'
             ],
-             [
-                'name' => 'John Doe',
+            [
+                'name' => 'Jane Doe', 
                 'gender' => 'Female'
-            ]
+                ]
         ];
+
         return response()->json($users);
     }
 
