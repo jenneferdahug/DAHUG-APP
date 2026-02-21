@@ -37,7 +37,7 @@ Route::get('/post/{post}/comment/{comment}', function (string $postId, string $c
     return "Post ID: " . $postId . " - Comment: " . $comment;
 });
 
-Route::get('/post/{$id}', function (string $id) {
+Route::get('/post/{id}', function (string $id) {
     return $id;
 })->where('id', '[0-9]+');
 
