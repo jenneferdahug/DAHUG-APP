@@ -1,60 +1,193 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900">
-    <!-- Navigation -->
-    <nav class="bg-white/10 backdrop-blur-md border-b border-white/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="text-2xl font-bold text-white">DAHUG</div>
-                <div class="hidden md:flex gap-8">
-                    <a href="#features" class="text-white/80 hover:text-white transition">Features</a>
-                    <a href="#about" class="text-white/80 hover:text-white transition">About</a>
-                    <a href="#contact" class="text-white/80 hover:text-white transition">Contact</a>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e293b, #7c3aed, #1e293b);
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        nav {
+            background: rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        nav a {
+            color: #fff;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 2rem 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .hero .buttons a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            background: #7c3aed;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .hero .buttons a.secondary {
+            background: transparent;
+            border: 2px solid #fff;
+        }
+        .hero .buttons a:hover {
+            background: #5b21b6;
+        }
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 1rem;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .feature {
+            flex: 1 1 250px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+            border: none;
+            margin-bottom: 1rem;
+        }
+        form button {
+            background: #7c3aed;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">ModernApp</div>
+            <div>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center space-y-8">
-            <h1 class="text-5xl md:text-7xl font-bold text-white">Welcome to DAHUG</h1>
-            <p class="text-xl text-white/70 max-w-2xl mx-auto">Build amazing applications with modern design principles and cutting-edge technology</p>
-            <div class="flex justify-center gap-4">
-                <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition">Get Started</button>
-                <button class="border-2 border-white/30 hover:border-white text-white px-8 py-3 rounded-lg font-semibold transition">Learn More</button>
+    <div class="hero">
+        <h1>Welcome to ModernApp</h1>
+        <p>Create your next project with a beautiful, responsive, and secure web application foundation.</p>
+        <div class="buttons">
+            <a href="#features">Get Started</a>
+            <a href="#about" class="secondary">Learn More</a>
+        </div>
+    </div>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Fast Performance</h3>
+                <p>Lightning-fast load times and smooth user experience</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Modern Design</h3>
+                <p>Beautiful and responsive interfaces for all devices</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure</h3>
+                <p>Enterprise-grade security and data protection</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 class="text-4xl font-bold text-white text-center mb-16">Features</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 hover:bg-white/20 transition">
-                <div class="text-4xl mb-4">🚀</div>
-                <h3 class="text-xl font-bold text-white mb-3">Fast Performance</h3>
-                <p class="text-white/60">Lightning-fast load times and smooth user experience</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 hover:bg-white/20 transition">
-                <div class="text-4xl mb-4">🎨</div>
-                <h3 class="text-xl font-bold text-white mb-3">Modern Design</h3>
-                <p class="text-white/60">Beautiful and responsive interfaces for all devices</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 hover:bg-white/20 transition">
-                <div class="text-4xl mb-4">🔒</div>
-                <h3 class="text-xl font-bold text-white mb-3">Secure</h3>
-                <p class="text-white/60">Enterprise-grade security and data protection</p>
-            </div>
-        </div>
+    <section id="about">
+        <h2>About ModernApp</h2>
+        <p style="text-align:center;">
+            ModernApp is a starter template for building robust, scalable, and visually appealing web applications. Focused on performance, security, and user experience, it helps you launch your ideas faster and better.
+        </p>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white/5 border-t border-white/20 mt-20 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center text-white/60">
-            <p>&copy; 2024 DAHUG. All rights reserved.</p>
-        </div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2024 ModernApp. All rights reserved.
     </footer>
-</div>
-@endsection
+</body>
+</html>
