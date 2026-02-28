@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Response;
+use App\Services\ProductService;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-    return "Hello, World!";
+    return view('welcome', ['name' => 'function-app']);
 });
 
 Route::get('/show-users', [UserController::class, 'show']);
@@ -75,4 +77,17 @@ Route::get('/token', function (Request $request) {
 
 Route::post('/token', function (Request $request) {
     return $request->all();
+});
+
+// Controller & Middleware
+// This line is highlighted in the image
+Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+
+// Resource Route
+Route::resource('products', ProductController::class);
+
+// View with data using a Service
+Route::get('/product-list', function (ProductService $productService) {
+    $data['products'] = $productService->listProducts();
+    return view('products.list', $data);
 });
