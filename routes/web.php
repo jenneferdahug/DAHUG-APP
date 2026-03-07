@@ -9,7 +9,7 @@ use App\Services\ProductService;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-    return view('welcome', ['name' => 'function-app']);
+    return view('welcome', ['name' => 'DAHUG-APP']);
 });
 
 Route::get('/show-users', [UserController::class, 'show']);
@@ -81,7 +81,8 @@ Route::post('/token', function (Request $request) {
 
 // Controller & Middleware
 // This line is highlighted in the image
-Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+// Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+Route::get('/users', [UserController::class, 'index']);
 
 // Resource Route
 Route::resource('products', ProductController::class);
